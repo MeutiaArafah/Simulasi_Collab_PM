@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'login.dart';
 import 'calendar_page.dart'; // Import file calendar yang baru
+import 'category_page.dart'; // Kategori
 
 class HalamanUtama extends StatelessWidget {
   const HalamanUtama({super.key});
@@ -50,6 +51,20 @@ class HalamanUtama extends StatelessWidget {
               },
               icon: const Icon(Icons.calendar_today),
               label: const Text('Buka Kalender'),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Tombol Kategori
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CategoryPage()),
+                );
+              },
+              icon: const Icon(Icons.category),
+              label: const Text('Kategori Tugas'),
             ),
           ],
         ),
